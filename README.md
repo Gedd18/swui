@@ -1,1 +1,2 @@
-# swui
+# SWUI is for Scalable WPF UI
+

@@ -16,7 +16,7 @@
 	  <None Remove="svg\happy.svg" />
 	</ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SWUI.Controls\SWUI.Controls.csproj" />
+    <ProjectReference Include="..\SWUI\SWUI.csproj" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="svg\happy.svg" />

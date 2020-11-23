@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>net5.0-windows</TargetFramework>
+		<UseWPF>true</UseWPF>
+		<OutputPath>..\bin</OutputPath>
+        <RootNamespace>SWUI.Sample</RootNamespace>
+        <AssemblyName>SWUI.Sample</AssemblyName>
+		<Version>1.0.0</Version>
+		<Authors>Gedd18</Authors>
+		<Company>GitHub</Company>
+		<PackageDescription>MVVMNext</PackageDescription>
+		<RepositoryUrl>https://github.com/gedd18/MVVMNext</RepositoryUrl>
+		<OutputType>WinExe</OutputType>
+	</PropertyGroup>
+	<ItemGroup>
+	  <None Remove="svg\happy.svg" />
+	</ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SWUI.Controls\SWUI.Controls.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="svg\happy.svg" />
+  </ItemGroup>
+</Project>

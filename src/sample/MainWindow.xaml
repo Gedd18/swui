@@ -1,0 +1,31 @@
+﻿<Window x:Class="SWUI.Sample.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:MVNCtrls="clr-namespace:SWUI.Controls;assembly=SWUI.Controls"
+        xmlns:local="clr-namespace:SWUI.Sample" WindowStyle="None"
+        xmlns:si="clr-namespace:SVGImage.SVG;assembly=DotNetProjects.SVGImage"
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <MVNCtrls:DropBorder Grid.Row="0" Background="SteelBlue">
+            <MVNCtrls:StateButtons HorizontalAlignment="Right"/>
+        </MVNCtrls:DropBorder>
+        
+        <StackPanel Grid.Row="1" Margin="5">
+            <MVNCtrls:SVGButton Padding="2"
+                BaseColor="Green" OverBackgroundColor="Gray"
+                Source="/SWUI.Sample;component/svg/happy.svg"
+                Height="64" Width="64" 
+                CornerRadius="3"
+                OverColor="Red"
+                Command="{Binding mycommand}"
+                Parameter="{Binding myparameter}"/>
+        </StackPanel>
+    </Grid>
+</Window>

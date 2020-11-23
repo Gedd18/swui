@@ -1,0 +1,29 @@
+﻿<Border x:Class="SWUI.StateButtons"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:lcl="clr-namespace:SWUI"
+             xmlns:svg="clr-namespace:SVGImage.SVG;assembly=DotNetProjects.SVGImage"
+             mc:Ignorable="d"  Loaded="UserControl_Loaded"
+             d:DesignHeight="50" d:DesignWidth="150" x:Name="parent" Background="Transparent">
+    <StackPanel Orientation="Horizontal">
+        <lcl:SVGButton x:Name="MinimizeButton" Width="24" Height="24" 
+                       Padding="5"             
+                       Source="/SWUI.Controls;component/svg/minus.svg" 
+                       BaseColor="WhiteSmoke"
+                       OverColor="Red"/>
+
+        <lcl:SVGButton x:Name="MaximizeButton" Width="24" Height="24" 
+                       Padding="5"                       
+                       Source="/SWUI.Controls;component/svg/square.svg" 
+                       BaseColor="WhiteSmoke"
+                       OverColor="Red"/>
+
+        <lcl:SVGButton x:Name="CloseButton" Width="24" Height="24" 
+                       Padding="5"
+                       Source="/SWUI.Controls;component/svg/close.svg"
+                       BaseColor="WhiteSmoke"
+                       OverColor="Red"/>
+    </StackPanel>
+</Border>

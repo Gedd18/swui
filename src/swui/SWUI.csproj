@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>net5.0-windows</TargetFramework>
+		<UseWPF>true</UseWPF>
+		<OutputPath>..\bin</OutputPath>
+		<RootNamespace>SWUI.Controls</RootNamespace>
+		<AssemblyName>SWUI.Controls</AssemblyName>
+		<Version>1.0.0</Version>
+		<Authors>Gedd18</Authors>
+		<Company>GitHub</Company>
+		<PackageDescription>MVVMNext</PackageDescription>
+		<RepositoryUrl>https://github.com/gedd18/MVVMNext</RepositoryUrl>
+	</PropertyGroup>
+	<ItemGroup>
+		<None Remove="svg\close.svg" />
+		<None Remove="svg\minus.svg" />
+		<None Remove="svg\restore.svg" />
+		<None Remove="svg\square.svg" />
+	</ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="DotNetProjects.SVGImage" Version="4.1.86" />
+		<PackageReference Include="MVVMNext" Version="1.0.1" />
+	</ItemGroup>
+	<ItemGroup>
+		<Resource Include="svg\close.svg" />
+		<Resource Include="svg\minus.svg" />
+		<Resource Include="svg\restore.svg" />
+		<Resource Include="svg\square.svg" />
+	</ItemGroup>
+</Project>

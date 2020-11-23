@@ -50,13 +50,13 @@ namespace SWUI
                 {
                     case WindowState.Normal:
                         _parentWindow.WindowState = WindowState.Maximized;
-                        MaximizeButton.Source = "/SWUI.Controls;component/svg/restore.svg";
+                        MaximizeButton.Source = "/SWUI;component/svg/restore.svg";
                         break;
                     case WindowState.Minimized:
                         break;
                     case WindowState.Maximized:
                         _parentWindow.WindowState = WindowState.Normal;
-                        MaximizeButton.Source = "/SWUI.Controls;component/svg/square.svg";
+                        MaximizeButton.Source = "/SWUI;component/svg/square.svg";
                         break;
                     default:
                         break;

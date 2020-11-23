@@ -10,19 +10,19 @@
     <StackPanel Orientation="Horizontal">
         <lcl:SVGButton x:Name="MinimizeButton" Width="24" Height="24" 
                        Padding="5"             
-                       Source="/SWUI.Controls;component/svg/minus.svg" 
+                       Source="/SWUI;component/svg/minus.svg" 
                        BaseColor="WhiteSmoke"
                        OverColor="Red"/>
 
         <lcl:SVGButton x:Name="MaximizeButton" Width="24" Height="24" 
                        Padding="5"                       
-                       Source="/SWUI.Controls;component/svg/square.svg" 
+                       Source="/SWUI;component/svg/square.svg" 
                        BaseColor="WhiteSmoke"
                        OverColor="Red"/>
 
         <lcl:SVGButton x:Name="CloseButton" Width="24" Height="24" 
                        Padding="5"
-                       Source="/SWUI.Controls;component/svg/close.svg"
+                       Source="/SWUI;component/svg/close.svg"
                        BaseColor="WhiteSmoke"
                        OverColor="Red"/>
     </StackPanel>

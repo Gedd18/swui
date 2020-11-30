@@ -4,28 +4,69 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:SWUI="clr-namespace:SWUI;assembly=SWUI"
-        xmlns:local="clr-namespace:SWUI.Sample" WindowStyle="None"
-        xmlns:si="clr-namespace:SVGImage.SVG;assembly=DotNetProjects.SVGImage"
-        mc:Ignorable="d" WindowStartupLocation="CenterScreen"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        xmlns:local="clr-namespace:SWUI.Sample" 
+        xmlns:vm="clr-namespace:SWUI.Sample.ViewModel"
+        xmlns:view="clr-namespace:SWUI.Sample.View"
+        xmlns:system="clr-namespace:System;assembly=mscorlib"
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen" Background="Transparent"
+        Title="MainWindow" Height="450" Width="800" AllowsTransparency="True" WindowStyle="None"
+        x:Name="parentWindow">
+    <Window.Resources>
+        <DataTemplate DataType="{x:Type vm:HomeViewModel}">
+            <Border CornerRadius="5" BorderThickness="1" BorderBrush="SteelBlue"
+                    HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBlock FontWeight="Bold" Margin="10">
+                    Welcome to the SWUI sample application !
+                    <LineBreak/>
+                    <LineBreak/>
+                    Please select a control on the left panel to see how to use it.
+                </TextBlock>
+            </Border>
+        </DataTemplate>
+        
+        <DataTemplate DataType="{x:Type vm:CommandPanelViewModel}">
+            <view:CommandPanelView/>
+        </DataTemplate>
+        
+        <DataTemplate DataType="{x:Type vm:DropBorderViewModel}">
+            <view:DropBorderView/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type vm:WindowStateButtonsViewModel}">
+            <view:WindowStateButtonView/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type vm:SVGButtonViewModel}">
+            <view:SVGButtonView/>
+        </DataTemplate>
+
+    </Window.Resources>
+    <Grid Background="Transparent">
         <Grid.RowDefinitions>
-            <RowDefinition Height="50"/>
+            <RowDefinition Height="80"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <SWUI:DropBorder Grid.Row="0" Background="SteelBlue">
-            <SWUI:StateButtons HorizontalAlignment="Right"/>
+        <SWUI:DropBorder Grid.Row="0" Background="SteelBlue" CornerRadius="5,5,0,0">
+            <SWUI:StateButtons HorizontalAlignment="Right" VerticalAlignment="Top" Margin="10"/>
         </SWUI:DropBorder>
-        
-        <StackPanel Grid.Row="1" Margin="5">
-            <SWUI:SVGButton Padding="2"
-                BaseColor="Green" OverBackgroundColor="Gray"
-                Source="/SWUI.Sample;component/svg/happy.svg"
-                Height="64" Width="64" 
-                CornerRadius="3"
-                OverColor="Red"
-                Command="{Binding mycommand}"
-                Parameter="{Binding myparameter}"/>
-        </StackPanel>
+        <TextBlock Grid.Row="0" Margin="20,0,0,0" Foreground="AliceBlue"
+                   FontSize="64" FontWeight="Bold" FontFamily="Arial Rounded MT Bold" Text="SWUI" HorizontalAlignment="left"/>
+        <DockPanel Grid.Row="1" Background="AntiqueWhite">
+            <Border Background="SteelBlue" VerticalAlignment="Stretch">
+            <ItemsControl ItemsSource="{Binding ControlsItemList}" Margin="0,32,0,0"
+                          VerticalAlignment="Stretch" Background="SteelBlue">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <MenuItem Margin="0" Foreground="white"
+                                BorderThickness="0" BorderBrush="White" Header="{Binding Key}" 
+                                Command="{Binding DataContext.ChangeControlsPanelCommand, ElementName=parentWindow}"
+                                CommandParameter="{Binding Value}"/>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+            </Border>
+            <ContentControl HorizontalAlignment="Center" VerticalAlignment="Center"
+                            Content="{Binding CurrentViewModel}"/>
+        </DockPanel>
     </Grid>
 </Window>

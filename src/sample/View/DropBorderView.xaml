@@ -1,0 +1,37 @@
+﻿<UserControl x:Class="SWUI.Sample.View.DropBorderView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SWUI.Sample.View"
+             xmlns:SWUI="clr-namespace:SWUI;assembly=SWUI"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Border BorderBrush="SteelBlue" BorderThickness="1" CornerRadius="5" 
+            Background="WhiteSmoke">
+        <StackPanel Orientation="Horizontal" >
+            <TextBlock VerticalAlignment="Center" Margin="10">
+                <TextBlock FontWeight="Bold">DropBorder</TextBlock>
+                <LineBreak/>
+                <LineBreak/>
+                Panel that can move the windows by left clic.
+                <LineBreak/>
+                Useful for non regular windows.
+                <LineBreak/><LineBreak/>
+                <Run Foreground="Gray"><![CDATA[<SWUI:DropBorder Height="32" Width="48" Background="CornflowerBlue"/>]]></Run>
+            </TextBlock>
+            <Rectangle Width="1">
+                <Rectangle.Fill>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Transparent"/>
+                        <GradientStop Color="SteelBlue" Offset="0.5"/>
+                        <GradientStop Color="Transparent" Offset="1"/>
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+            <Border CornerRadius="2" Height="48" Margin="10">
+                <SWUI:DropBorder Height="32" Width="48" Background="CornflowerBlue"/>
+            </Border>
+        </StackPanel>
+    </Border>
+</UserControl>

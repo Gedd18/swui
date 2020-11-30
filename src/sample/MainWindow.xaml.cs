@@ -1,8 +1,4 @@
-﻿using System;
-using System.IO;
-using System.Windows;
-using System.Windows.Media;
-using System.Windows.Resources;
+﻿using System.Windows;
 
 namespace SWUI.Sample
 {
@@ -14,6 +10,7 @@ namespace SWUI.Sample
         public MainWindow()
         {
             InitializeComponent();
+            this.DataContext = new SampleViewModel();
         }
     }
 }

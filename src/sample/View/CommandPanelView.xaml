@@ -7,10 +7,8 @@
              xmlns:SWUI="clr-namespace:SWUI;assembly=SWUI"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Border BorderBrush="SteelBlue" BorderThickness="1" CornerRadius="5" 
-            Background="WhiteSmoke">
-        <StackPanel Orientation="Horizontal" >
-            <TextBlock VerticalAlignment="Center" Margin="10" >
+    <StackPanel Orientation="Horizontal" >
+        <TextBlock VerticalAlignment="Center" Margin="10" >
                 <TextBlock FontWeight="Bold">CommandPanel</TextBlock>
                 <LineBreak/>
                 <LineBreak/>
@@ -25,21 +23,20 @@
                 <LineBreak/>
                 <TextBlock xml:space="preserve" Foreground="Gray">&#9;Parameter="{Binding myParam}"/&gt;</TextBlock>
             </TextBlock>
-            <Rectangle Width="1">
-                <Rectangle.Fill>
-                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                        <GradientStop Color="Transparent"/>
-                        <GradientStop Color="SteelBlue" Offset="0.5"/>
-                        <GradientStop Color="Transparent" Offset="1"/>
-                    </LinearGradientBrush>
-                    
-                </Rectangle.Fill>
-            </Rectangle>
-            <StackPanel Margin="10" VerticalAlignment="Center">
-                <SWUI:CommandPanel Height="48" Width="64" Background="CadetBlue" Command="{Binding ShowMessageCommand}"/>
-                <TextBox Text="{Binding Message, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="5" BorderThickness="1" BorderBrush="Gray" Foreground="Black" Height="25"/>
-            </StackPanel>
-            
+        <Rectangle Width="1">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Transparent"/>
+                    <GradientStop Color="SteelBlue" Offset="0.5"/>
+                    <GradientStop Color="Transparent" Offset="1"/>
+                </LinearGradientBrush>
+
+            </Rectangle.Fill>
+        </Rectangle>
+        <StackPanel Margin="10" VerticalAlignment="Center">
+            <SWUI:CommandPanel Height="48" Width="64" Background="CadetBlue" Command="{Binding ShowMessageCommand}"/>
+            <TextBox Text="{Binding Message, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="5" BorderThickness="1" BorderBrush="Gray" Foreground="Black" Height="25"/>
         </StackPanel>
-    </Border>
+
+    </StackPanel>
 </UserControl>

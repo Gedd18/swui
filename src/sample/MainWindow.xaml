@@ -51,7 +51,7 @@
         </SWUI:DropBorder>
         <TextBlock Grid.Row="0" Margin="20,0,0,0" Foreground="AliceBlue"
                    FontSize="64" FontWeight="Bold" FontFamily="Arial Rounded MT Bold" Text="SWUI" HorizontalAlignment="left"/>
-        <DockPanel Grid.Row="1" Background="AntiqueWhite">
+        <DockPanel Grid.Row="1" Background="White">
             <Border Background="SteelBlue" VerticalAlignment="Stretch">
             <ItemsControl ItemsSource="{Binding ControlsItemList}" Margin="0,32,0,0"
                           VerticalAlignment="Stretch" Background="SteelBlue">

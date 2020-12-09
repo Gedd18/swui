@@ -17,7 +17,7 @@
                 <LineBreak/>
                 <TextBlock xml:space="preserve" Foreground="Gray">&lt;SWUI:SVGButton Height="48" Width="48"</TextBlock>
                 <LineBreak/>
-                <TextBlock xml:space="preserve" Foreground="Gray">BaseColor="CornflowerBlue"</TextBlock>
+                <TextBlock xml:space="preserve" Foreground="Gray">&#9;BaseColor="CornflowerBlue"</TextBlock>
                 <LineBreak/>               
                 <TextBlock xml:space="preserve" Foreground="Gray">&#9;BorderBrush="CornflowerBlue"</TextBlock>
                 <LineBreak/>                

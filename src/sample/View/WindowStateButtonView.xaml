@@ -17,7 +17,13 @@
                 Just put it in xaml.
                 <LineBreak/>
                 <LineBreak/>
-                <Run Foreground="Gray"><![CDATA[<SWUI:StateButtons/>]]></Run>
+                <Run Foreground="Gray">&lt;SWUI:StateButtons BaseColor="LightGray" OverColor="Black"</Run>
+                <LineBreak/>
+                <Run xml:space="preserve" Foreground="Gray">&#9;BorderBrush="DarkBlue" CornerRadius="1"</Run>       
+                <LineBreak/>
+                <Run xml:space="preserve" Foreground="Gray">&#9;Background="CornflowerBlue" BorderThickness="2"/&gt;</Run>
+             
+            
             </TextBlock>
         <Rectangle Width="1">
             <Rectangle.Fill>
@@ -28,8 +34,8 @@
                 </LinearGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
-        <Border Background="SteelBlue" CornerRadius="2" Height="48" Margin="10">
-            <SWUI:StateButtons/>
+        <Border Height="48" Margin="10">
+            <SWUI:StateButtons BaseColor="LightGray" OverColor="Black" BorderBrush="DarkBlue" CornerRadius="1" Background="CornflowerBlue" BorderThickness="2"/>
         </Border>
     </StackPanel>
 </UserControl>

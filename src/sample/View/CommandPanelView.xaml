@@ -15,7 +15,7 @@
                 Basic panel with an action triggered by a left mouse clic  
                 <LineBreak/>
                 <LineBreak/>              
-                <Run Foreground="Gray"><![CDATA[<SWUI:CommandPanel Height="48" Width="64"]]></Run>
+                <Run Foreground="Gray">&lt;SWUI:CommandPanel Height="48" Width="64"&gt;</Run>
                 <LineBreak/>
                 <TextBlock xml:space="preserve" Foreground="Gray">&#9;Background="CadetBlue"</TextBlock>
                 <LineBreak/>

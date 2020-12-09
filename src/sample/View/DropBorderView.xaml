@@ -16,7 +16,7 @@
                 <LineBreak/>
                 Useful for non regular windows.
                 <LineBreak/><LineBreak/>
-                <Run Foreground="Gray"><![CDATA[<SWUI:DropBorder Height="32" Width="48" Background="CornflowerBlue"/>]]></Run>
+                <Run Foreground="Gray">&lt;SWUI:DropBorder Height="32" Width="48" Background="CornflowerBlue"/&gt;</Run>
             </TextBlock>
         <Rectangle Width="1">
             <Rectangle.Fill>

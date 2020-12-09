@@ -1,9 +1,7 @@
 ﻿using MvvmNext;
 using MvvmNext.Command;
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Windows.Input;
 using SWUI.Sample.ViewModel;
 
 namespace SWUI.Sample

@@ -1,4 +1,5 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Drawing;
 using System.Windows;
 using System.Windows.Controls;
 using MvvmNext.Command;
@@ -10,16 +11,45 @@ namespace SWUI
     /// </summary>
     public partial class StateButtons : Border
     {
+        public static readonly DependencyProperty OverColorProperty =
+        DependencyProperty.Register(
+            "OverColor",
+            typeof(System.Windows.Media.Color?),
+            typeof(StateButtons),
+            new PropertyMetadata(System.Windows.Media.Colors.White, OverColorChanged));
+
         public static readonly DependencyProperty BaseColorProperty =
         DependencyProperty.Register(
             "BaseColor",
-            typeof(Color),
+            typeof(System.Windows.Media.Color?),
             typeof(StateButtons),
-            new PropertyMetadata(Color.White));
+            new PropertyMetadata(System.Windows.Media.Colors.White, BaseColorChanged));
 
-        public Color BaseColor
+
+        private static void OverColorChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            get { return (Color)GetValue(BaseColorProperty); }
+            StateButtons sb = d as StateButtons;
+            sb.MinimizeButton.OverColor = e.NewValue as System.Windows.Media.Color?;
+            sb.MaximizeButton.OverColor = e.NewValue as System.Windows.Media.Color?;
+            sb.CloseButton.OverColor = e.NewValue as System.Windows.Media.Color?;
+        }
+        private static void BaseColorChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            StateButtons sb = d as StateButtons;
+            sb.MinimizeButton.BaseColor = e.NewValue as System.Windows.Media.Color?;
+            sb.MaximizeButton.BaseColor = e.NewValue as System.Windows.Media.Color?;
+            sb.CloseButton.BaseColor = e.NewValue as System.Windows.Media.Color?;
+        }
+
+        public System.Windows.Media.Color? OverColor
+        {
+            get { return (System.Windows.Media.Color?)GetValue(BaseColorProperty); }
+            set { SetValue(BaseColorProperty, value); }
+        }
+
+        public System.Windows.Media.Color? BaseColor
+        {
+            get { return (System.Windows.Media.Color?)GetValue(BaseColorProperty); }
             set { SetValue(BaseColorProperty, value); }
         }
 

@@ -12,18 +12,18 @@
                        Padding="5"             
                        Source="/SWUI;component/svg/minus.svg" 
                        BaseColor="WhiteSmoke"
-                       OverColor="Red"/>
+                       OverColor="DarkGray"/>
 
         <lcl:SVGButton x:Name="MaximizeButton" Width="24" Height="24" 
                        Padding="5"                       
                        Source="/SWUI;component/svg/square.svg" 
                        BaseColor="WhiteSmoke"
-                       OverColor="Red"/>
+                       OverColor="DarkGray"/>
 
         <lcl:SVGButton x:Name="CloseButton" Width="24" Height="24" 
                        Padding="5"
                        Source="/SWUI;component/svg/close.svg"
                        BaseColor="WhiteSmoke"
-                       OverColor="Red"/>
+                       OverColor="DarkGray"/>
     </StackPanel>
 </Border>

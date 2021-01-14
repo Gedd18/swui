@@ -4,11 +4,11 @@ using System.Windows;
 
 namespace SWUI.Sample.ViewModel
 {
-    public class SVGButtonViewModel : ViewModelBase
+    public class SVGTextButtonViewModel : ViewModelBase
     {
         public RelayCommand SmileCommand { get; private set; }
 
-        public SVGButtonViewModel()
+        public SVGTextButtonViewModel()
         {
             SmileCommand = new RelayCommand(Smile);
         }

@@ -27,12 +27,16 @@
                     OverBackgroundColor="LightSteelBlue"
                     Source="/SWUI.Sample;component/svg/happy.svg"                 
                     Command="{Binding SmileCommand}"
-                    IconPosition="Top"/&gt;
-                    </TextBlock>
+                    IconPosition="Bottom"/&gt;
+                </TextBlock>
                 <LineBreak/>              
             </TextBlock>
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" >
-                <StackPanel>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <StackPanel HorizontalAlignment="Center" Grid.Column="0">
                     <TextBlock FontWeight="Bold">Icon position<LineBreak/></TextBlock>
 
                     <RadioButton GroupName="iconposition">
@@ -70,6 +74,7 @@
                 </StackPanel>
 
                 <SWUI:SVGTextButton Padding="3" BaseColor="CornflowerBlue"
+                    Grid.Column="1"
                     BorderBrush="CornflowerBlue"
                     BorderThickness="1" CornerRadius="3"
                     OverColor="White"
@@ -78,7 +83,7 @@
                     Source="/SWUI.Sample;component/svg/happy.svg"                 
                     Command="{Binding SmileCommand}"
                     IconPosition="{Binding Position}"/>
-            </StackPanel>
+            </Grid>
         </StackPanel>
     </Grid>
 </UserControl>

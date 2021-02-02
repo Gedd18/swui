@@ -67,37 +67,48 @@ namespace SWUI
             set;
         }
 
-        public Dock TextPosition { get; private set; }
-
-        private Dock _iconPosition;
-
-        public Dock IconPosition { 
-            get { return _iconPosition; }
-            set {
-                switch (value)
-                {
-                    case Dock.Left:
-                        TextPosition = Dock.Right;
-                        break;
-                    case Dock.Top:
-                        TextPosition = Dock.Bottom;
-                        break;
-                    case Dock.Right:
-                        TextPosition = Dock.Left;
-                        break;
-                    case Dock.Bottom:
-                        TextPosition = Dock.Top;
-                        break;
-                }
-                _iconPosition = value;
-            }
+        public Dock IconPosition
+        {
+            get { return (Dock)GetValue(IconPositionProperty); }
+            set { SetValue(IconPositionProperty, value); }
         }
+
+        // Using a DependencyProperty as the backing store for IconPosition.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty IconPositionProperty =
+            DependencyProperty.Register("IconPosition", typeof(Dock), typeof(SVGTextButton), new PropertyMetadata(Dock.Left, IconPositionChanged));
+
+        private static void IconPositionChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            SVGTextButton stb = d as SVGTextButton;
+            Dock pos = (Dock)e.NewValue;
+            switch (pos)
+            {
+                case Dock.Left:
+                    DockPanel.SetDock(stb.icon, Dock.Left);
+                    DockPanel.SetDock(stb.text, Dock.Right);
+                    break;
+                case Dock.Top:
+                    DockPanel.SetDock(stb.icon, Dock.Top);
+                    DockPanel.SetDock(stb.text, Dock.Bottom);
+                    break;
+                case Dock.Right:
+                    DockPanel.SetDock(stb.icon, Dock.Right);
+                    DockPanel.SetDock(stb.text, Dock.Left);
+                    break;
+                case Dock.Bottom:
+                    DockPanel.SetDock(stb.icon, Dock.Bottom);
+                    DockPanel.SetDock(stb.text, Dock.Top);
+                    break;
+            }  
+        }
+
 
         public SVGTextButton()
         {
             InitializeComponent();
             MouseEnter += SVGButton_MouseEnter;
             MouseLeave += SVGButton_MouseLeave;
+            IconPosition = Dock.Bottom;
             Text = "...";
         }
 

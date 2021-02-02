@@ -5,13 +5,15 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:SWUI.Sample.View"
       xmlns:SWUI="clr-namespace:SWUI;assembly=SWUI"
+      xmlns:mvn="clr-namespace:MvvmNext.Command;assembly=MVVMNext"
+      xmlns:b="http://schemas.microsoft.com/xaml/behaviors"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800">
 
     <Grid>
         <StackPanel>
             <TextBlock VerticalAlignment="Center" Margin="10">
-                <TextBlock FontWeight="Bold">SVGButton</TextBlock>
+                <TextBlock FontWeight="Bold">SVGTextButton</TextBlock>
                 <LineBreak/>
                 <LineBreak/>
                 Clickable SVG button with text.
@@ -29,7 +31,45 @@
                     </TextBlock>
                 <LineBreak/>              
             </TextBlock>
-            <SWUI:SVGTextButton Padding="3" BaseColor="CornflowerBlue"
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" >
+                <StackPanel>
+                    <TextBlock FontWeight="Bold">Icon position<LineBreak/></TextBlock>
+
+                    <RadioButton GroupName="iconposition">
+                        <RadioButton.Content>Left</RadioButton.Content>
+                        <b:Interaction.Triggers>
+                            <b:EventTrigger EventName="Checked" >
+                                <mvn:EventToCommand Command="{Binding SetIconPositionLeft}"/>
+                            </b:EventTrigger>
+                        </b:Interaction.Triggers>
+                    </RadioButton>
+                    <RadioButton GroupName="iconposition">
+                        <RadioButton.Content>Right</RadioButton.Content>
+                        <b:Interaction.Triggers>
+                            <b:EventTrigger EventName="Checked" >
+                                <mvn:EventToCommand Command="{Binding SetIconPositionRight}"/>
+                            </b:EventTrigger>
+                        </b:Interaction.Triggers>
+                    </RadioButton>
+                    <RadioButton GroupName="iconposition">
+                        <RadioButton.Content>Top</RadioButton.Content>
+                        <b:Interaction.Triggers>
+                            <b:EventTrigger EventName="Checked" >
+                                <mvn:EventToCommand Command="{Binding SetIconPositionTop}"/>
+                            </b:EventTrigger>
+                        </b:Interaction.Triggers>
+                    </RadioButton>
+                    <RadioButton GroupName="iconposition">
+                        <RadioButton.Content>Bottom</RadioButton.Content>
+                        <b:Interaction.Triggers>
+                            <b:EventTrigger EventName="Checked" >
+                                <mvn:EventToCommand Command="{Binding SetIconPositionBottom}"/>
+                            </b:EventTrigger>
+                        </b:Interaction.Triggers>
+                    </RadioButton>
+                </StackPanel>
+
+                <SWUI:SVGTextButton Padding="3" BaseColor="CornflowerBlue"
                     BorderBrush="CornflowerBlue"
                     BorderThickness="1" CornerRadius="3"
                     OverColor="White"
@@ -37,7 +77,8 @@
                     OverBackgroundColor="LightSteelBlue"
                     Source="/SWUI.Sample;component/svg/happy.svg"                 
                     Command="{Binding SmileCommand}"
-                    IconPosition="Top"/>
+                    IconPosition="{Binding Position}"/>
+            </StackPanel>
         </StackPanel>
     </Grid>
 </UserControl>

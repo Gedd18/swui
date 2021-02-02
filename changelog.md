@@ -1,4 +1,4 @@
-## SWUI 2.0.0pre
+## SWUI 2.0.0
   <br/>
 
 **Changes**  

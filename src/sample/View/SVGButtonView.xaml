@@ -41,7 +41,7 @@
             </Rectangle.Fill>
         </Rectangle>
         <Border VerticalAlignment="Center" Margin="10">
-            <SWUI:SVGButton Height="48" Width="48" BaseColor="CornflowerBlue"
+            <SWUI:SVGButton Padding="3" Height="48" Width="48" BaseColor="CornflowerBlue"
                     BorderBrush="CornflowerBlue"
                     BorderThickness="1" CornerRadius="3"
                     OverColor="Aquamarine"

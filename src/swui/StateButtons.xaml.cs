@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Drawing;
 using System.Windows;
 using System.Windows.Controls;
 using MvvmNext.Command;
@@ -58,7 +57,7 @@ namespace SWUI
         public StateButtons()
         {
             InitializeComponent();
-            MinimizeButton.Command = new RelayCommand<object>((o) => Click_Minimize()) ;
+            MinimizeButton.Command = new RelayCommand<object>((o) => Click_Minimize());
             MaximizeButton.Command = new RelayCommand<object>((o) => Click_Maximize());
             CloseButton.Command = new RelayCommand<object>((o) => Click_Close());
         }
@@ -70,7 +69,7 @@ namespace SWUI
                 _parentWindow.WindowState = WindowState.Minimized;
             }
         }
-            
+
 
         private void Click_Maximize()
         {
@@ -80,13 +79,11 @@ namespace SWUI
                 {
                     case WindowState.Normal:
                         _parentWindow.WindowState = WindowState.Maximized;
-                        MaximizeButton.Source = "/SWUI;component/svg/restore.svg";
                         break;
                     case WindowState.Minimized:
                         break;
                     case WindowState.Maximized:
                         _parentWindow.WindowState = WindowState.Normal;
-                        MaximizeButton.Source = "/SWUI;component/svg/square.svg";
                         break;
                     default:
                         break;
@@ -102,6 +99,28 @@ namespace SWUI
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
             _parentWindow = Window.GetWindow(this);
+            if (_parentWindow != null)
+            {
+                _parentWindow.StateChanged += _parentWindow_StateChanged;
+                _parentWindow_StateChanged(null, null);
+            }
+        }
+
+        private void _parentWindow_StateChanged(object sender, EventArgs e)
+        {
+            switch (_parentWindow.WindowState)
+            {
+                case WindowState.Normal:
+                    MaximizeButton.Source = "/SWUI;component/svg/square.svg";
+                    break;
+                case WindowState.Minimized:
+                    break;
+                case WindowState.Maximized:
+                    MaximizeButton.Source = "/SWUI;component/svg/restore.svg";
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }

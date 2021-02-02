@@ -35,7 +35,7 @@ namespace SWUI
         private Color? _baseColor;
 
         /// <summary>
-        /// Drawing color when the mouse is over
+        /// Color used to draw the SVG
         /// </summary>
         public Color? BaseColor
         {
@@ -43,13 +43,16 @@ namespace SWUI
             set { img.OverrideColor = value; _baseColor = value; Update(); }
         }
 
+        /// <summary>
+        /// Drawing color when the mouse is over
+        /// </summary>
         public Color? OverColor
         {
             get;
             set;
         }
 
-        public Color? OverBackgroundColor
+        public Brush OverBackgroundColor
         { 
             get; 
             set; 
@@ -73,7 +76,7 @@ namespace SWUI
         {
             if (OverColor != null) img.OverrideColor = OverColor;
             if (OverBackgroundColor != null)
-                Background = new SolidColorBrush(OverBackgroundColor.GetValueOrDefault());
+                Background = OverBackgroundColor;
             Update();
         }
 

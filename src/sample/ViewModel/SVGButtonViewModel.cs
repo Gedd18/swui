@@ -1,6 +1,5 @@
 ﻿using MvvmNext;
 using MvvmNext.CommandWpf;
-using System;
 using System.Windows;
 
 namespace SWUI.Sample.ViewModel

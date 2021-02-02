@@ -40,6 +40,10 @@
             <view:SVGButtonView/>
         </DataTemplate>
 
+        <DataTemplate DataType="{x:Type vm:SVGTextButtonViewModel}">
+            <view:SVGTextButtonView/>
+        </DataTemplate>
+
     </Window.Resources>
     <Grid Background="Transparent">
         <Grid.RowDefinitions>
@@ -65,8 +69,10 @@
                 </ItemsControl.ItemTemplate>
             </ItemsControl>
             </Border>
-            <ContentControl HorizontalAlignment="Center" VerticalAlignment="Center"
+            <Border BorderThickness="1" BorderBrush="SteelBlue">
+                <ContentControl HorizontalAlignment="Center" VerticalAlignment="Center"
                             Content="{Binding CurrentViewModel}"/>
+            </Border>
         </DockPanel>
     </Grid>
 </Window>

@@ -23,7 +23,8 @@ namespace SWUI.Sample
                 { "CommandPanel", typeof(CommandPanelViewModel)},
                 { "DropBorder", typeof(DropBorderViewModel)},
                 { "WindowStateButtons", typeof(WindowStateButtonsViewModel)},
-                { "SVGButton", typeof (SVGButtonViewModel)}
+                { "SVGButton", typeof (SVGButtonViewModel)},
+                { "SVGTextButton", typeof (SVGTextButtonViewModel) }
             };
 
             ChangeControlsPanelCommand = new RelayCommand<Type>(ChangeControlPanel);

@@ -10,14 +10,34 @@
 
     <Grid>
         <StackPanel>
+            <TextBlock VerticalAlignment="Center" Margin="10">
+                <TextBlock FontWeight="Bold">SVGButton</TextBlock>
+                <LineBreak/>
+                <LineBreak/>
+                Clickable SVG button with text.
+                <LineBreak/>
+                <TextBlock xml:space="preserve" Foreground="Gray">           
+                    &lt;SWUI:SVGTextButton Padding="3" BaseColor="CornflowerBlue"
+                    BorderBrush="CornflowerBlue"
+                    BorderThickness="1" CornerRadius="3"
+                    OverColor="White"
+                    Text="Some text"
+                    OverBackgroundColor="LightSteelBlue"
+                    Source="/SWUI.Sample;component/svg/happy.svg"                 
+                    Command="{Binding SmileCommand}"
+                    IconPosition="Top"/&gt;
+                    </TextBlock>
+                <LineBreak/>              
+            </TextBlock>
             <SWUI:SVGTextButton Padding="3" BaseColor="CornflowerBlue"
                     BorderBrush="CornflowerBlue"
                     BorderThickness="1" CornerRadius="3"
-                    OverColor="Aquamarine"
+                    OverColor="White"
                     Text="Some text"
-                    OverBackgroundColor="LightGray"
+                    OverBackgroundColor="LightSteelBlue"
                     Source="/SWUI.Sample;component/svg/happy.svg"                 
-                    Command="{Binding SmileCommand}"/>
+                    Command="{Binding SmileCommand}"
+                    IconPosition="Top"/>
         </StackPanel>
     </Grid>
 </UserControl>

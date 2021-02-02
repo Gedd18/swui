@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Resources;
@@ -17,23 +18,26 @@ namespace SWUI
         /// </summary>
         public string Source
         {
-            get => img.Source;
+            get => icon.Source;
             set
             {
-                img.Source = value;
-                Uri _uri = new Uri("pack://application:,,," + img.Source);
+                icon.Source = value;
+                Uri _uri = new Uri("pack://application:,,," + icon.Source);
                 StreamResourceInfo sri = Application.GetResourceStream(_uri);
 
-                using (Stream s = sri.Stream)
-                {
-                    img.SetImage(s);
-                }
+                using Stream s = sri.Stream;
+                icon.SetImage(s);
             }
         }
 
+        /// <summary>
+        /// Content text for the control
+        /// </summary>
         public string Text { get; set; }
 
-
+        /// <summary>
+        /// private field for base color property
+        /// </summary>
         private Color? _baseColor;
 
         /// <summary>
@@ -42,7 +46,7 @@ namespace SWUI
         public Color? BaseColor
         {
             get => _baseColor;
-            set { img.OverrideColor = value; _baseColor = value; Update(); }
+            set { icon.OverrideColor = value; _baseColor = value; Update(); }
         }
 
         /// <summary>
@@ -54,10 +58,39 @@ namespace SWUI
             set;
         }
 
+        /// <summary>
+        /// Background drawing color when the mouse is over
+        /// </summary>
         public Brush OverBackgroundColor
         {
             get;
             set;
+        }
+
+        public Dock TextPosition { get; private set; }
+
+        private Dock _iconPosition;
+
+        public Dock IconPosition { 
+            get { return _iconPosition; }
+            set {
+                switch (value)
+                {
+                    case Dock.Left:
+                        TextPosition = Dock.Right;
+                        break;
+                    case Dock.Top:
+                        TextPosition = Dock.Bottom;
+                        break;
+                    case Dock.Right:
+                        TextPosition = Dock.Left;
+                        break;
+                    case Dock.Bottom:
+                        TextPosition = Dock.Top;
+                        break;
+                }
+                _iconPosition = value;
+            }
         }
 
         public SVGTextButton()
@@ -70,14 +103,14 @@ namespace SWUI
 
         private void SVGButton_MouseLeave(object sender, MouseEventArgs e)
         {
-            img.OverrideColor = _baseColor;
+            icon.OverrideColor = _baseColor;
             Background = Brushes.Transparent;
             Update();
         }
 
         private void SVGButton_MouseEnter(object sender, MouseEventArgs e)
         {
-            if (OverColor != null) img.OverrideColor = OverColor;
+            if (OverColor != null) icon.OverrideColor = OverColor;
             if (OverBackgroundColor != null)
                 Background = OverBackgroundColor;
             Update();
@@ -85,14 +118,12 @@ namespace SWUI
 
         private void Update()
         {
-            if (img.Source == null) return;
-            Uri _uri = new Uri("pack://application:,,," + img.Source);
+            if (icon.Source == null) return;
+            Uri _uri = new Uri("pack://application:,,," + icon.Source);
             StreamResourceInfo sri = Application.GetResourceStream(_uri);
 
-            using (Stream s = sri.Stream)
-            {
-                img.SetImage(s);
-            }
+            using Stream s = sri.Stream;
+            icon.SetImage(s);
         }
 
         private void CommandPanel_Loaded(object sender, RoutedEventArgs e)

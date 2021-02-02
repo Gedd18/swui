@@ -5,7 +5,7 @@
 		<OutputPath>..\bin</OutputPath>
 		<RootNamespace>SWUI</RootNamespace>
 		<AssemblyName>SWUI</AssemblyName>
-		<Version>1.1.0</Version>
+		<Version>2.0.0</Version>
 		<Authors>Gedd18</Authors>
 		<Company>GitHub</Company>
 		<Copyright>Gedd18</Copyright>

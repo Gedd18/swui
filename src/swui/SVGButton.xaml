@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:SWUI"
              xmlns:si="clr-namespace:SVGImage.SVG;assembly=DotNetProjects.SVGImage"
-             mc:Ignorable="d" d:DesignHeight="450" d:DesignWidth="800" Loaded="CommandPanel_Loaded"
+             mc:Ignorable="d" d:DesignHeight="450" d:DesignWidth="800"
              Background="Transparent">
     <si:SVGImage x:Name="img" VerticalContentAlignment="Center"/>
 </local:CommandPanel>

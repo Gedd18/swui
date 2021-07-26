@@ -21,13 +21,7 @@ namespace SWUI
             set
             {
                 img.Source = value;
-                Uri _uri = new Uri("pack://application:,,," + img.Source);
-                StreamResourceInfo sri = Application.GetResourceStream(_uri);
-
-                using (Stream s = sri.Stream)
-                {
-                    img.SetImage(s);
-                }
+                img.UriSource = new Uri("pack://application:,,," + img.Source); 
             }
         }
 
@@ -40,7 +34,10 @@ namespace SWUI
         public Color? BaseColor
         {
             get => _baseColor;
-            set { img.OverrideColor = value; _baseColor = value; Update(); }
+            set { 
+                img.OverrideColor = value; 
+                _baseColor = value; 
+            }
         }
 
         /// <summary>
@@ -69,7 +66,6 @@ namespace SWUI
         {
             img.OverrideColor = _baseColor;
             Background = Brushes.Transparent;
-            Update();
         }
 
         private void SVGButton_MouseEnter(object sender, MouseEventArgs e)
@@ -77,24 +73,6 @@ namespace SWUI
             if (OverColor != null) img.OverrideColor = OverColor;
             if (OverBackgroundColor != null)
                 Background = OverBackgroundColor;
-            Update();
-        }
-
-        private void Update()
-        {
-            if (img.Source == null) return;
-            Uri _uri = new Uri("pack://application:,,," + img.Source);
-            StreamResourceInfo sri = Application.GetResourceStream(_uri);
-
-            using (Stream s = sri.Stream)
-            {
-                img.SetImage(s);
-            }
-        }
-
-        private void CommandPanel_Loaded(object sender, RoutedEventArgs e)
-        {
-            Update();
         }
     }
 }

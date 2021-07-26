@@ -46,7 +46,10 @@ namespace SWUI
         public Color? BaseColor
         {
             get => _baseColor;
-            set { icon.OverrideColor = value; _baseColor = value; Update(); }
+            set { 
+                icon.OverrideColor = value; 
+                _baseColor = value; 
+            }
         }
 
         /// <summary>
@@ -116,7 +119,7 @@ namespace SWUI
         {
             icon.OverrideColor = _baseColor;
             Background = Brushes.Transparent;
-            Update();
+            //Update();
         }
 
         private void SVGButton_MouseEnter(object sender, MouseEventArgs e)
@@ -124,7 +127,6 @@ namespace SWUI
             if (OverColor != null) icon.OverrideColor = OverColor;
             if (OverBackgroundColor != null)
                 Background = OverBackgroundColor;
-            Update();
         }
 
         private void Update()
@@ -135,11 +137,6 @@ namespace SWUI
 
             using Stream s = sri.Stream;
             icon.SetImage(s);
-        }
-
-        private void CommandPanel_Loaded(object sender, RoutedEventArgs e)
-        {
-            Update();
         }
     }
 }

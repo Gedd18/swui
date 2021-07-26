@@ -1,3 +1,9 @@
+## SWUI 2.0.2  
+  
+**Fixes**  
+    Fix image source setting
+<br/><br/><br/>
+
 ## SWUI 2.0.1  
   Add website url in package  
   <br/>

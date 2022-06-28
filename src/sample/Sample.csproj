@@ -5,7 +5,7 @@
 		<OutputPath>..\bin</OutputPath>
         <RootNamespace>SWUI.Sample</RootNamespace>
         <AssemblyName>SWUI.Sample</AssemblyName>
-		<Version>1.1.0</Version>
+		<Version>1.2.0</Version>
 		<Authors>Gedd18</Authors>
 		<Company>GitHub</Company>
 		<OutputType>WinExe</OutputType>

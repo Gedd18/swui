@@ -1,11 +1,11 @@
-﻿using MvvmNext;
-using MvvmNext.CommandWpf;
+﻿using Microsoft.Toolkit.Mvvm.ComponentModel;
+using Microsoft.Toolkit.Mvvm.Input;
 using System;
 using System.Windows;
 
 namespace SWUI.Sample.ViewModel
 {
-    public class CommandPanelViewModel : ViewModelBase
+    public class CommandPanelViewModel : ObservableObject
     {
         public RelayCommand ShowMessageCommand { get; private set; }
 

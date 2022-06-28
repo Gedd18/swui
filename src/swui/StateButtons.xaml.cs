@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows;
 using System.Windows.Controls;
-using MvvmNext.Command;
+using Microsoft.Toolkit.Mvvm.Input;
 
 namespace SWUI
 {

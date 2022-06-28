@@ -5,7 +5,7 @@
 		<OutputPath>..\bin</OutputPath>
 		<RootNamespace>SWUI</RootNamespace>
 		<AssemblyName>SWUI</AssemblyName>
-		<Version>2.0.2</Version>
+		<Version>2.1.0</Version>
 		<Authors>Gedd18</Authors>
 		<Company>GitHub</Company>
 		<Copyright>Gedd18</Copyright>
@@ -20,7 +20,7 @@
 	</ItemGroup>
 	<ItemGroup>
 		<PackageReference Include="DotNetProjects.SVGImage" Version="4.1.94" />
-		<PackageReference Include="MVVMNext" Version="1.0.1" />
+		<PackageReference Include="Microsoft.Toolkit.Mvvm" Version="7.1.2" />
 	</ItemGroup>
 	<ItemGroup>
 		<Resource Include="svg\close.svg" />

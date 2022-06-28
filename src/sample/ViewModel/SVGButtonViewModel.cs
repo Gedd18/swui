@@ -1,10 +1,10 @@
-﻿using MvvmNext;
-using MvvmNext.CommandWpf;
+﻿using Microsoft.Toolkit.Mvvm.ComponentModel;
+using Microsoft.Toolkit.Mvvm.Input;
 using System.Windows;
 
 namespace SWUI.Sample.ViewModel
 {
-    public class SVGButtonViewModel : ViewModelBase
+    public class SVGButtonViewModel : ObservableObject
     {
         public RelayCommand SmileCommand { get; private set; }
 

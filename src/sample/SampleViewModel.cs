@@ -1,12 +1,12 @@
-﻿using MvvmNext;
-using MvvmNext.Command;
+﻿using Microsoft.Toolkit.Mvvm.ComponentModel;
+using Microsoft.Toolkit.Mvvm.Input;
 using System;
 using System.Collections.Generic;
 using SWUI.Sample.ViewModel;
 
 namespace SWUI.Sample
 {
-    public class SampleViewModel : ViewModelBase
+    public class SampleViewModel : ObservableObject
     {
 
         public RelayCommand<Type> ChangeControlsPanelCommand { get; private set; }
@@ -15,7 +15,7 @@ namespace SWUI.Sample
 
         Dictionary<string, Type> _controlsItemDic;
 
-        public ViewModelBase CurrentViewModel { get; private set; }
+        public ObservableObject CurrentViewModel { get; private set; }
 
         public SampleViewModel() 
         {
@@ -34,8 +34,8 @@ namespace SWUI.Sample
 
         private void ChangeControlPanel(Type obj)
         {
-            CurrentViewModel = Activator.CreateInstance(obj) as ViewModelBase;
-            RaisePropertyChanged(() => CurrentViewModel);
+            CurrentViewModel = Activator.CreateInstance(obj) as ObservableObject;
+            OnPropertyChanged(nameof(CurrentViewModel));
         }
     }
 }

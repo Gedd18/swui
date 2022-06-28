@@ -1,3 +1,9 @@
+## SWUI 2.1.0
+
+**Changes** 
+    Now SWUI use Microsoft MVVM Toolkit instead of MVVM next
+<br/><br/><br/>
+
 ## SWUI 2.0.2  
   
 **Fixes**  

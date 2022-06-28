@@ -1,8 +1,8 @@
-﻿using MvvmNext;
+﻿using Microsoft.Toolkit.Mvvm.ComponentModel;
 
 namespace SWUI.Sample.ViewModel
 {
-    public class WindowStateButtonsViewModel : ViewModelBase
+    public class WindowStateButtonsViewModel : ObservableObject
     {
     }
 }
